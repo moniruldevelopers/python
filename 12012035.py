@@ -1,11 +1,26 @@
-def find_longest_string(list):
-    longest_string = ""
-    for string in list:
-        if len(string) > len(longest_string):
-            longest_string = string
-    return longest_string
+class Stack:  
+  def __init__(self):
+    self.stack = []
+
+  def push(self, element):
+    self.stack.append(element)
+
+  def pop(self):
+    return self.stack.pop()
+
+  def display(self):
+    
+    for element in self.stack:
+      print(element, end=" ")
+    print()
 
 
 if __name__ == "__main__":
-    list = list(map(str, input("Enter a list of strings: ").split()))
-    print("The longest string in the list is:", find_longest_string(list))
+  stack = Stack()
+  stack.push(1)
+  stack.push(2)
+  stack.push(3)
+  stack.display()
+  element = stack.pop()
+  print("The popped element is:", element)
+  stack.display()
